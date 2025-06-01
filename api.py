@@ -14,6 +14,9 @@ def get_saved_reels():
 
     collection_id = "ALL_MEDIA_AUTO_COLLECTION"
     medias = cl.collection_medias_v1(collection_id)
+    media_amount = cl.collections()[0].media_count
+    collection_id = "ALL_MEDIA_AUTO_COLLECTION"
+    medias = cl.collection_medias_v1(collection_id, amount=media_amount+100)
 
     output = []
     for media in medias:
